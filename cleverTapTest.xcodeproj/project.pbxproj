@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3FB0E219D91435669E84E36 /* libPods-cleverTapTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CF61734CBD10029D51A779 /* libPods-cleverTapTest.a */; };
 		F0B7D1F821085F9A002B4DEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B7D1F721085F9A002B4DEE /* AppDelegate.swift */; };
 		F0B7D1FA21085F9A002B4DEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B7D1F921085F9A002B4DEE /* ViewController.swift */; };
 		F0B7D1FD21085F9A002B4DEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B7D1FB21085F9A002B4DEE /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C82C7304782D9DA62D172D4 /* Pods-cleverTapTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cleverTapTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-cleverTapTest/Pods-cleverTapTest.release.xcconfig"; sourceTree = "<group>"; };
+		86CF61734CBD10029D51A779 /* libPods-cleverTapTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cleverTapTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD03C709D32BA139BC5E7D98 /* Pods-cleverTapTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cleverTapTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cleverTapTest/Pods-cleverTapTest.debug.xcconfig"; sourceTree = "<group>"; };
 		F0B7D1F421085F9A002B4DEE /* cleverTapTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cleverTapTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B7D1F721085F9A002B4DEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0B7D1F921085F9A002B4DEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3FB0E219D91435669E84E36 /* libPods-cleverTapTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AA6F7877AAE9235239313BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86CF61734CBD10029D51A779 /* libPods-cleverTapTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5774B0C7DCF5BCF820E45D0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD03C709D32BA139BC5E7D98 /* Pods-cleverTapTest.debug.xcconfig */,
+				1C82C7304782D9DA62D172D4 /* Pods-cleverTapTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F0B7D1EB21085F9A002B4DEE = {
 			isa = PBXGroup;
 			children = (
 				F0B7D1F621085F9A002B4DEE /* cleverTapTest */,
 				F0B7D1F521085F9A002B4DEE /* Products */,
+				5774B0C7DCF5BCF820E45D0D /* Pods */,
+				0AA6F7877AAE9235239313BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0B7D20621085F9C002B4DEE /* Build configuration list for PBXNativeTarget "cleverTapTest" */;
 			buildPhases = (
+				88706BBB06C91FE2A41B5EA7 /* [CP] Check Pods Manifest.lock */,
 				F0B7D1F021085F9A002B4DEE /* Sources */,
 				F0B7D1F121085F9A002B4DEE /* Frameworks */,
 				F0B7D1F221085F9A002B4DEE /* Resources */,
@@ -129,6 +154,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88706BBB06C91FE2A41B5EA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cleverTapTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F0B7D1F021085F9A002B4DEE /* Sources */ = {
@@ -278,6 +324,7 @@
 		};
 		F0B7D20721085F9C002B4DEE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD03C709D32BA139BC5E7D98 /* Pods-cleverTapTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +342,7 @@
 		};
 		F0B7D20821085F9C002B4DEE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C82C7304782D9DA62D172D4 /* Pods-cleverTapTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
