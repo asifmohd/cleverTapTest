@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CleverTapSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        CleverTap.setCredentialsWithAccountID("TEST-RAN-DOM-KEYS", andToken: "TEST-ran-dom")
+        for _ in 1...20 {
+            DispatchQueue.global(qos: .userInitiated).async {
+                CleverTap.sharedInstance()
+            }
+        }
+
         return true
     }
 
